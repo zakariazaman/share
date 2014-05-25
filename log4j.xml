@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+<!-- <appender name="fileAppender" class="org.apache.log4j.FileAppender">
+		<param name="Threshold" value="INFO" />
+		<param name="File" value="test.txt" />
+		<layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
+		</layout>
+</appender>  -->
+ 
+<appender name="fileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+      <param name="Threshold" value="INFO" />
+      
+      <param name="File" value="log/test.txt"/>  
+     <!-- <param name="File" value="test.txt"/> -->
+      <param name="DatePattern" value="_yyyy-MM-dd-HH-mm" />
+     <!-- <param name="File" value="sample.log"/>-->
+    <!--  <param name="Append" value="false" />-->
+      <param name="Append" value="true" />
+       
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
+      </layout>
+</appender> 
+<appender name="stdout" class="org.apache.log4j.ConsoleAppender"> 
+    <layout class="org.apache.log4j.PatternLayout"> 
+      <!-- Pattern to output the caller's file name and line number -->
+      <param name="ConversionPattern" value="%5p %d[mm:ss] (%F:%M:%L) - %m%n"/> 
+    </layout> 
+</appender> 
+<!-- <appender name="fileAppender" class="org.apache.log4j.FileAppender">
+        <param name="file" value="mylogfile.log" />
+        <param name="append" value="false" />
+        <param name="threshold" value="INFO" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] - %m%n" />
+        </layout> 
+ </appender>-->
+   <!-- <appender name="util" class="org.apache.log4j.FileAppender">
+        <param name="File" value="/tmp/util.log" />
+        <param name="Append" value="false" />
+        <param name="threshold" value="INFO" />
+        <layout class="org.apache.log4j.PatternLayout">
+          <param name="ConversionPattern" value="%t %-5p %c{2} - %m%n"/>
+        </layout>           
+     </appender> -->
+<root> 
+    <!-- <priority value ="debug" /> -->
+    <level value="INFO"/>
+    
+    <appender-ref ref="stdout" />
+    <appender-ref ref="fileAppender" /> 
+  </root> 
+  
+<!--<root>
+    <level value="INFO"/>
+    <appender-ref ref="fileAppender"/>
+    <appender-ref ref="stdout" />
+</root> -->
+</log4j:configuration>
+<!--  
+Log4j/Chainsaw Pattern Layout Integration Table
+log4j.xml PatternLayout
+ChainsawLogFileRecieverState.xml
+Description
+%d
+TIMESTAMP
+Used to output the date of the logging event
+%-5p
+LEVEL
+Used to output the priority of the logging event
+%t
+THREAD
+Used to output the name of the thread that generated the logging event.
+%C
+CLASS
+Used to output the fully qualified class name of the caller issuing the logging request
+%F
+FILE
+Used to output the file name where the logging request was issued.
+%L
+LINE
+Used to output the line number from where the logging request was issued.
+%m
+MESSAGE
+Used to output the application supplied message associated with the logging event.
+%n
+n/a
+Outputs the platform dependent line separator character or characters.
+%x
+LOGGER
+The logger from which the message came-->

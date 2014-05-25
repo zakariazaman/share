@@ -1,0 +1,6 @@
+2014-03-06 03:25:55,674 INFO   [BaseTest] browser is initialized  
+2014-03-06 03:25:58,365 INFO   [SmokeTest] ================================ 
+2014-03-06 03:25:58,366 INFO   [SmokeTest] Purchse test started 
+2014-03-06 03:25:58,366 INFO   [SmokeTest] ================================ 
+2014-03-06 03:25:58,389 INFO   [IndexPage] Visiting index page 
+2014-03-06 03:25:58,399 INFO   [IndexPage] I am from load method 
